@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Цена кухни</title>
+    <link rel="stylesheet" type="text/css" href="/css/priceStyle.css" media="all"/>
+</head>
+<body>
+<div class="price">
+    Цена кухни <a th:text="${kitchenPrice}"/> руб.
+</div>
+
+<div>
+    <form action="/meeting" method="post">
+    <input type="text" name="name" placeholder="Имя">
+        <input type="tel" name="phone" placeholder="Телефон"pattern="8[0-9]{10}">
+    <input class="submit_button" type="submit" value="Записаться на встречу в салон">
+    </form>
+</div>
+</body>
+</html>

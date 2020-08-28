@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"Калькулятор"</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="all"/>
+    <link rel="shortcut icon" href="https://mzalex.ru/uploads/gss/brands/brand_icon_2.jpg" type="image/jpg">
+</head>
+<body>
+<h1 id="h1_head">Заполните форму и получите ориентировочную стоимость вашей кухни</h1>
+<form action="/price" method="post">
+    <div id="test3">
+        <input type="number" step="any" name="size" placeholder="Погонные метры кухни. Например, 5.5" class="active"required></label>
+        <p><select name="fasady" class="active">
+            <option>Выберите фасады из списка</option>
+            <option>Пленка ПВХ</option>
+            <option>Пластик HPL</option>
+            <option>Эмаль</option>
+            <option>Шпон</option>
+            <option>Массив</option>
+        </select></p>
+
+        <p><select name="visota" class="active">
+            <option>Выберите высоту верхних шкафов</option>
+            <option>72 см</option>
+            <option>90 см</option>
+            <option>до потолка</option>
+        </select></p>
+
+        <p><select name="stoleshnica" class="active">
+            <option>Выберите материал столешницы</option>
+            <option>пластик</option>
+            <option>искусственный камень</option>
+        </select></p>
+
+        <p><select name="fartuk" class="active">
+            <option>Выберите материал фартука</option>
+            <option>плитка</option>
+            <option>пластик</option>
+            <option>искусственный камень</option>
+        </select></p>
+
+        <p><select name="furnitura" class="active" >
+            <option>Выберите производителя фурнитуры</option>
+            <option>Blum(Австрия)</option>
+            <option>Boyard(Россия)</option>
+        </select></p>
+
+        <input type="number" name="yashiki" placeholder="Укажите количество выкатных ящиков Например, 4"  required></label>
+
+        <p><input class="submit_button" type="submit" value="Получить просчет"></p>
+    </div>
+</form>
+</body>
+</html>

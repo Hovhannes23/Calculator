@@ -1,0 +1,54 @@
+body {
+    background: url(https://img1.akspic.ru/image/10129-dizajn_interera-kuhonnaya_plita-stoleshnica-kuhnya-mebel-1920x1200.jpg);
+    background-attachment: fixed; /* Фон страницы фиксируется */
+
+}
+
+div {
+    font-size: 40px;
+    top: 50%;
+    left: 50%;
+    margin:10px auto 5px;
+    border-radius:10px;
+    position: center;
+    background: white;
+    opacity: .9;
+    text-align: center;
+    height:330px;
+    width:200px;
+    padding:100px 100px;
+    z-index: 9999; /* чтобы форма была поверх всех элементов страницы */
+}
+
+div.price{
+    font-size: 40px;
+    /*top: 50%;*/
+    left: 50%;
+    margin:10px auto 5px;
+    border-radius:10px;
+    position: center;
+    background: white;
+    opacity: .9;
+    text-align: center;
+    height:100px;
+    width:200px;
+    /*padding:100px 100px;*/
+    z-index: 9999; /* чтобы форма была поверх всех элементов страницы */
+}
+
+.submit_button {
+    left: 25%;
+    position: relative;
+    height:50px;
+    width:300px;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    color :#fff ;
+    background-color: #0071f0;
+    outline: none;
+    transition: 0.3s;
+}

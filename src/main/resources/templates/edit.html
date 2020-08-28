@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список лидов</title>
+</head>
+<body>
+<div id="dark-fon ">
+    <h1>Список лидов</h1>
+
+    <table border="1px">
+        <th>Id</th>
+        <th>Имя</th>
+        <th>Телефон</th>
+        <th>Редактировать</th>
+        <tr>
+            <form th:action="'/edit/'+${customer.id}" method="post">
+            <td th:text="${customer.id}"></td>
+            <td><input type="text" name="name" placeholder="Введите имя"> </td>
+            <td><input type="tel" name="phone" placeholder="Введите телефон"> </td>
+            <td> <input type="submit"> </td>
+            </form>
+        </tr>
+        <tr th:each="el : ${customers}">
+            <td th:text="${el.id}"></td>
+            <td th:text="${el.name}"></td>
+            <td th:text="${el.phone}"></td>
+            <td><a th:href="'/edit/'+${el.id}">Редактировать</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

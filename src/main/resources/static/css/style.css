@@ -1,0 +1,146 @@
+
+/*body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;*/
+/*      text-align: center;}*/
+body {
+    background: url(https://img1.akspic.ru/image/10129-dizajn_interera-kuhonnaya_plita-stoleshnica-kuhnya-mebel-1920x1200.jpg);
+    background-attachment: fixed; /* Фон страницы фиксируется */
+    background-repeat: repeat-x; /* Изображение повторяется по горизонтали */
+    /*text-align: center;*/
+}
+
+
+select {
+    width: 300px;
+    padding:10px;
+    border-radius:10px;
+    background: goldenrod;
+    position: center;
+}
+
+select.active:focus{
+    background-color: dodgerblue;
+    color: white;
+}
+
+form input {
+    top: 10%;
+    left: 50%;
+    width: 280px;
+    padding:10px;
+    border-radius:10px;
+    background: goldenrod;
+    position: center;
+
+}
+
+input.active:focus{
+    background-color: dodgerblue;
+    color: white;
+}
+
+input::-webkit-input-placeholder { color: black; }
+
+form { background: white;
+    opacity: .9;
+    text-align: center;
+    border-radius: 5px;
+    height:330px;
+    width:200px;
+    padding:100px 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -200px; /* отступы равны половинным размера формы */
+    z-index: 9999; /* чтобы форма была поверх всех элементов страницы */
+}
+
+h1 { background: white;
+    opacity: .9;
+    text-align: center;
+    border-radius: 5px;
+    height:200px;
+    width:400px;
+    padding:100px 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -200px; /* отступы равны половинным размера формы */
+    z-index: 9999; /* чтобы форма была поверх всех элементов страницы */
+}
+div {
+    top: 50%;
+    left: 50%;
+    margin:10px auto 5px;
+    width: 300px;
+    padding:10px;
+    border-radius:10px;
+    position: center;
+}
+
+table{
+    color: black;
+    background-color: white;
+    opacity: 0.8;
+    border:1px;
+
+}
+
+#dark-fon {
+    background-color:rgba(0,0,0,.3);
+    height:100%;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+}
+
+
+#test3 {
+    top: 5%;
+    left: 50%;
+    margin-left: -500px;
+    margin-bottom: -500px;
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    vertical-align: center;
+}
+
+#h1_head {
+    background: white;
+    background-size: 100px;
+    background-color: goldenrod;
+    font-family: Serif;
+    font-size:35px;
+    opacity: .9;
+    text-align: center;
+    border-radius: 5px;
+    height:100px;
+    width:700px;
+    padding:30px 30px;
+    position:absolute;
+    top: 5%;
+    left: 25%;
+    margin: -10px 0 0 -20px;
+    z-index: 9999;
+}
+
+.submit_button {
+
+    height:50px;
+    width:300px;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    color :#fff ;
+    background-color: #0071f0;
+    outline: none;
+}
+
+
+
+
+
