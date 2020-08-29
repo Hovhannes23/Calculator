@@ -1,32 +1,37 @@
 body {
-    background: url(https://img1.akspic.ru/image/10129-dizajn_interera-kuhonnaya_plita-stoleshnica-kuhnya-mebel-1920x1200.jpg);
-    background-attachment: fixed; /* Фон страницы фиксируется */
+    /* Фон страницы фиксируется */
+    background: black url(https://sdelai-lestnicu.ru/wp-content/uploads/9/5/9/95962f60dc267aef2379be4f0fea688e.png) fixed;
+}
 
+.bg-fon {
+    background-color:rgba(0,0,0,.3);
+    height:100%;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
 }
 
 div {
     font-size: 40px;
     top: 50%;
-    left: 50%;
     margin:10px auto 5px;
     border-radius:10px;
-    position: center;
-    background: white;
-    opacity: .9;
+    position: absolute;
     text-align: center;
     height:330px;
-    width:200px;
     padding:100px 100px;
-    z-index: 9999; /* чтобы форма была поверх всех элементов страницы */
+    z-index: inherit; /* чтобы форма была поверх всех элементов страницы */
 }
 
 div.price{
+    width: 300px;
+    margin:auto;
+    position: absolute;
     font-size: 20px;
     /*top: 50%;*/
     left: 50%;
-    margin:10px auto 5px;
     border-radius:10px;
-    position: center;
     /*background: white;*/
     /*opacity: .9;*/
     /*text-align: center;*/
@@ -37,11 +42,11 @@ div.price{
 }
 
 .submit_button {
+    width: 300px;
+    margin:auto;
+    position: absolute;
     left: 25%;
-    position: relative;
     height:50px;
-    width:300px;
-    margin: 10px;
     padding: 10px 20px;
     border-radius: 5px;
     font-family: sans-serif;
@@ -52,3 +57,56 @@ div.price{
     outline: none;
     transition: 0.3s;
 }
+
+div.meeting{
+    left: 25%;
+    width: 300px;
+    margin: auto;
+}
+
+.meeting_button{
+    width: 300px;
+    /*margin:auto;*/
+    /*position: absolute;*/
+    /*left: 25%;*/
+    height:50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    color :#fff ;
+    background-color: #0071f0;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+table {
+    width: 300px;
+    margin:auto;
+    position: absolute;
+    right:50%;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    text-align: left;
+    border-collapse: collapse;
+    border-radius: 10px;
+    box-shadow: 0 0 0 5px dodgerblue;
+    color: goldenrod;
+}
+
+td {
+    border-top: 5px solid dodgerblue;
+    padding: 8px;
+    background: goldenrod;
+    color: black;
+}
+/*table td:first-child {*/
+/*    border-bottom-left-radius: 20px;*/
+/*}*/
+/*table td:last-child {*/
+/*    border-bottom-right-radius: 20px;*/
+/*}*/
+
+
