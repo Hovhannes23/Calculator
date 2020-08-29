@@ -4,6 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Component
 public class Calculator implements Calculate {
 
@@ -12,9 +17,9 @@ public class Calculator implements Calculate {
 
 
     @Override
-    public double calculate(double size, Fasady fasady, Visota visota,
-                            Stoleshnica stoleshnica, Fartuk fartuk,
-                            Furnitura furnitura, int yashiki) {
+    public Map<String,Integer> calculate(double size, Fasady fasady, Visota visota,
+                                  Stoleshnica stoleshnica, Fartuk fartuk,
+                                  Furnitura furnitura, int yashiki) {
         double sum = 0;
         double sumWithDiscount = 0;
         double fasadyPrice = 0;
@@ -24,6 +29,7 @@ public class Calculator implements Calculate {
         double furnituraPrice = 0;
         double yashikiPrice = 0;
         double discount = 0;
+        double sborka = 0;
 
         switch (fasady) {
             case PLYONKA:
@@ -98,9 +104,21 @@ public class Calculator implements Calculate {
         discount = 0.25;
     else discount = 0.29;
 
+    int discountSum = (int)(sum*discount);
     sumWithDiscount = sum*(1-discount);
+    sborka = sumWithDiscount*0.1;
 
-    return sumWithDiscount;
+    Map<String,Integer> priceAndDiscount = new HashMap<>();
+    priceAndDiscount.put("sum",(int)sum);
+    priceAndDiscount.put("discount",discountSum);
+    priceAndDiscount.put("sumWithDiscount",(int)sumWithDiscount);
+    priceAndDiscount.put("stoleshnicaPrice",(int)stoleshnicaPrice);
+    priceAndDiscount.put("fartukPrice",(int)fartukPrice);
+    priceAndDiscount.put("furnituraPrice",(int)furnituraPrice);
+    priceAndDiscount.put("yashikiPrice",(int)yashikiPrice);
+    priceAndDiscount.put("sborka",(int)sborka);
+
+    return priceAndDiscount;
     }
 
 

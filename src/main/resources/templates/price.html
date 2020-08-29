@@ -7,13 +7,21 @@
 </head>
 <body>
 <div class="price">
-    Цена кухни <a th:text="${kitchenPrice}"/> руб.
+    Цена кухни без скидки <a th:text="${kitchenPrice}"/> руб.<br>
+    Скидка <a th:text="${discount}"/> руб.<br>
+    Цена со скидкой <a th:text="${sumWithDiscount}"/> руб.<br>
+    Сборка <a th:text="${sborka}"/> руб.<br>
+    Стоимость столешницы <a th:text="${stoleshnicaPrice}"/> руб.<br>
+    Стоимость фурнитуры <a th:text="${furnituraPrice}"/> руб.<br>
+    Стоимость ящиков <a th:text="${yashikiPrice}"/> руб.<br>
 </div>
+
+
 
 <div>
     <form action="/meeting" method="post">
     <input type="text" name="name" placeholder="Имя">
-        <input type="tel" name="phone" placeholder="Телефон"pattern="8[0-9]{10}">
+        <input type="tel" name="phone" placeholder="Введите телефон в формате 89991234567"pattern="8[0-9]{10}">
     <input class="submit_button" type="submit" value="Записаться на встречу в салон">
     </form>
 </div>

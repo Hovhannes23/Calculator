@@ -21,17 +21,17 @@ div {
 }
 
 div.price{
-    font-size: 40px;
+    font-size: 20px;
     /*top: 50%;*/
     left: 50%;
     margin:10px auto 5px;
     border-radius:10px;
     position: center;
-    background: white;
-    opacity: .9;
-    text-align: center;
-    height:100px;
-    width:200px;
+    /*background: white;*/
+    /*opacity: .9;*/
+    /*text-align: center;*/
+    /*height:100px;*/
+    /*width:200px;*/
     /*padding:100px 100px;*/
     z-index: 9999; /* чтобы форма была поверх всех элементов страницы */
 }

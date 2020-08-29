@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class MainController {
@@ -37,12 +39,24 @@ public class MainController {
                         @RequestParam String furnitura,
                         @RequestParam int yashiki, Model model){
 
-       int kitchenPrice = (int) calculator.calculate(size, Fasady.getFasadyByName(fasady), Visota.getVisotaByHeight(visota),
+       Map<String,Integer> prices =  calculator.calculate(size, Fasady.getFasadyByName(fasady), Visota.getVisotaByHeight(visota),
                             Stoleshnica.getStoleshnicaByName(stoleshnica), Fartuk.getFartukByName(fartuk),
                             Furnitura.getFurnituraByName(furnitura), yashiki);
 
 
-        model.addAttribute("kitchenPrice",kitchenPrice);
+
+        model.addAttribute("kitchenPrice",prices.get("sum"));
+        model.addAttribute("discount",prices.get("discount"));
+        model.addAttribute("sumWithDiscount",prices.get("sumWithDiscount"));
+        model.addAttribute("stoleshnicaPrice",prices.get("stoleshnicaPrice"));
+        model.addAttribute("fartukPrice",prices.get("fartukPrice"));
+        model.addAttribute("furnituraPrice",prices.get("furnituraPrice"));
+        model.addAttribute("yashikiPrice", prices.get("yashikiPrice"));
+        model.addAttribute("sborka",prices.get("sborka"));
+//        model.addAttribute("stoleshnica",Stoleshnica.getStoleshnicaByName(stoleshnica));
+//        model.addAttribute("fartuk",Fartuk.getFartukByName(fartuk));
+//        model.addAttribute("furnitura",Furnitura.getFurnituraByName(furnitura));
+//        model.addAttribute("yashiki", yashiki);
 
         return "price";
     }
