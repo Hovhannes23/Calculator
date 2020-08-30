@@ -5,10 +5,8 @@ import com.example.calculator.repo.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,13 +35,17 @@ public class MainController {
                         @RequestParam String stoleshnica,
                         @RequestParam String fartuk,
                         @RequestParam String furnitura,
-                        @RequestParam int yashiki, Model model){
+                        @RequestParam int yashiki, ModelMap model){
+
+
 
        Map<String,Integer> prices =  calculator.calculate(size, Fasady.getFasadyByName(fasady), Visota.getVisotaByHeight(visota),
                             Stoleshnica.getStoleshnicaByName(stoleshnica), Fartuk.getFartukByName(fartuk),
                             Furnitura.getFurnituraByName(furnitura), yashiki);
 
-
+        Kitchen kitchen = new Kitchen(size,Fasady.getFasadyByName(fasady),Visota.getVisotaByHeight(visota),
+                Stoleshnica.getStoleshnicaByName(stoleshnica),Fartuk.getFartukByName(fartuk),Furnitura.getFurnituraByName(furnitura),
+                yashiki,prices.get("sum"));
 
         model.addAttribute("kitchenPrice",prices.get("sum"));
         model.addAttribute("discount",prices.get("discount"));
@@ -53,10 +55,8 @@ public class MainController {
         model.addAttribute("furnituraPrice",prices.get("furnituraPrice"));
         model.addAttribute("yashikiPrice", prices.get("yashikiPrice"));
         model.addAttribute("sborka",prices.get("sborka"));
-//        model.addAttribute("stoleshnica",Stoleshnica.getStoleshnicaByName(stoleshnica));
-//        model.addAttribute("fartuk",Fartuk.getFartukByName(fartuk));
-//        model.addAttribute("furnitura",Furnitura.getFurnituraByName(furnitura));
-//        model.addAttribute("yashiki", yashiki);
+
+        model.put("kitchen",kitchen);
 
         return "price";
     }
@@ -64,9 +64,21 @@ public class MainController {
     @PostMapping("/meeting")
     public String meeting(@RequestParam String name,
                           @RequestParam long phone,
-                          Model model)
+//                          @RequestParam double size,
+//                          @RequestParam int kitchenPrice,
+//                          @RequestParam int discount,
+//                          @RequestParam int sumWithDiscount,
+//                          @RequestParam int sborka,
+//                          @RequestParam Enum<Stoleshnica> stoleshnica,
+//                          @RequestParam Enum<Furnitura> furnitura,
+//                          @RequestParam int yashiki,
+                          @ModelAttribute("kitchen") Kitchen kitchen,
+                          ModelMap model)
     {
-        Customer customer = new Customer(name,phone);
+
+        Customer customer = new Customer(name,phone,kitchen);
+        model.addAttribute("kitchen", kitchen);
+        model.put("kitchen",kitchen);
         customerRepo.save(customer);
         return "meeting";
     };

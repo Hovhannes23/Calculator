@@ -2,10 +2,8 @@ package com.example.calculator.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.lang.module.FindException;
 
 @Entity
 public class Customer {
@@ -16,15 +14,20 @@ public class Customer {
 
     private String name;
     private long phone;
+    private int kitchen_id;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn (name="kitchen_id", insertable = false, updatable = false)
+    private Kitchen kitchen;
 
 
     public Customer() {
     }
 
-    public Customer(String name,long phone){
+    public Customer(String name,long phone,Kitchen kitchen){
         this.name = name;
         this.phone = phone;
+        this.kitchen = kitchen;
     }
 
     public long getId() {
@@ -52,8 +55,16 @@ public class Customer {
         this.phone = phone;
     }
 
+    public Kitchen getKitchen() {
+        return kitchen;
+    }
+
+    public void setKitchen(Kitchen kitchen) {
+        this.kitchen = kitchen;
+    }
+
     @Override
     public String toString() {
-        return "id: " +id + "\n" +" имя: " +name+ "\n" + "телефон: "+ phone;
+        return "id: " +id + "\n" +" имя: " +name+ "\n" + "телефон: "+ phone + kitchen.getFasady();
     }
 }
