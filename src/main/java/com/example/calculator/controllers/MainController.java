@@ -2,13 +2,11 @@ package com.example.calculator.controllers;
 
 import com.example.calculator.models.*;
 import com.example.calculator.repo.CustomerRepo;
+import com.example.calculator.repo.KitchenRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +21,9 @@ public class MainController {
 
     @Autowired
     CustomerRepo customerRepo;
+
+    @Autowired
+    KitchenRepo kitchenRepo;
 
     @GetMapping("/calculator")
     public String main()
@@ -43,7 +44,8 @@ public class MainController {
                             Stoleshnica.getStoleshnicaByName(stoleshnica), Fartuk.getFartukByName(fartuk),
                             Furnitura.getFurnituraByName(furnitura), yashiki);
 
-
+        Kitchen kitchen = new Kitchen(size, Fasady.getFasadyByName(fasady),Visota.getVisotaByHeight(visota),
+                Stoleshnica.getStoleshnicaByName(stoleshnica),Fartuk.getFartukByName(fartuk),Furnitura.getFurnituraByName(furnitura),yashiki,prices.get("sum"));
 
         model.addAttribute("kitchenPrice",prices.get("sum"));
         model.addAttribute("discount",prices.get("discount"));
@@ -58,16 +60,22 @@ public class MainController {
 //        model.addAttribute("furnitura",Furnitura.getFurnituraByName(furnitura));
 //        model.addAttribute("yashiki", yashiki);
 
+        model.addAttribute("kitchen",kitchen);
+
         return "price";
     }
 
     @PostMapping("/meeting")
     public String meeting(@RequestParam String name,
                           @RequestParam long phone,
+                          @ModelAttribute("kitchen") Kitchen kitchen,
                           Model model)
     {
         Customer customer = new Customer(name,phone);
+        customer.setKitchen(kitchen);
+        kitchen.setCustomer(customer);
         customerRepo.save(customer);
+        kitchenRepo.save(kitchen);
         return "meeting";
     };
 

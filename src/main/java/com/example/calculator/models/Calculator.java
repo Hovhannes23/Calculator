@@ -1,6 +1,7 @@
 package com.example.calculator.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -11,9 +12,6 @@ import java.util.Map;
 
 @Component
 public class Calculator implements Calculate {
-
-    @Autowired
-    Kitchen kitchen;
 
 
     @Override

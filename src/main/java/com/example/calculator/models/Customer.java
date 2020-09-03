@@ -2,10 +2,7 @@ package com.example.calculator.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Customer {
@@ -16,6 +13,9 @@ public class Customer {
 
     private String name;
     private long phone;
+
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Kitchen kitchen;
 
 
 
@@ -50,6 +50,14 @@ public class Customer {
 
     public void setPhone(long phone) {
         this.phone = phone;
+    }
+
+    public Kitchen getKitchen() {
+        return kitchen;
+    }
+
+    public void setKitchen(Kitchen kitchen) {
+        this.kitchen = kitchen;
     }
 
     @Override
