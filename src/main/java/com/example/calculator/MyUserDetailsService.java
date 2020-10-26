@@ -3,9 +3,11 @@ package com.example.calculator;
 import com.example.calculator.models.User;
 import com.example.calculator.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -24,4 +26,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
   return  user.map(MyUserDetails::new).get();
     }
-}
+
+    }
+
