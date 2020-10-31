@@ -6,18 +6,19 @@
 
 Доступ к базе клиентов есть только у админа (реализацован на Spring Security)
 
+<a href="https://youtu.be/148P82XNDqs"> Посмотреть на YouTube, как работает калькулятор </a>
 
 ***Технологии:***
-<br>Java</br>
-<br>Spring (Boot, Security)</br>
-<br>Hibernate</br>
-<br>MySQL</br>
-<br>Thymeleaf</br>
-<br>Tomcat</br>
-<br>Html и Css</br>
-<br>JUnit (тестирование метода, который просчитывает стоимость кухни)</br>
-<br>Git</br>
+Java 
+Spring (Boot, Security) 
+Hibernate 
+MySQL 
+Thymeleaf
+Tomcat
+Html и Css
+JUnit (тестирование метода, который просчитывает стоимость кухни)
+Git
 
 
 
-<a href="https://youtu.be/148P82XNDqs"> Посмотреть на YouTube, как работает калькулятор </a>
+
