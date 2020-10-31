@@ -9,8 +9,8 @@
 <a href="https://youtu.be/148P82XNDqs"> Посмотреть на YouTube, как работает калькулятор </a>
 
 ***Технологии:***
-Java 
-Spring (Boot, Security) 
+Java <br>
+Spring (Boot, Security) <br>
 Hibernate 
 MySQL 
 Thymeleaf
