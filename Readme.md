@@ -8,16 +8,16 @@
 
 <a href="https://youtu.be/148P82XNDqs"> Посмотреть на YouTube, как работает калькулятор </a>
 
-***Технологии:***
+***Технологии:***<br>
 Java <br>
 Spring (Boot, Security) <br>
-Hibernate 
-MySQL 
-Thymeleaf
-Tomcat
-Html и Css
-JUnit (тестирование метода, который просчитывает стоимость кухни)
-Git
+Hibernate <br>
+MySQL <br>
+Thymeleaf<br>
+Tomcat<br>
+Html и Css<br>
+JUnit (тестирование метода, который просчитывает стоимость кухни)<br>
+Git<br>
 
 
 
