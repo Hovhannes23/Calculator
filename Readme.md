@@ -6,7 +6,7 @@
 
 Доступ к базе клиентов есть только у админа (реализацован на Spring Security)
 
-<a href="https://youtu.be/148P82XNDqs"> Посмотреть на YouTube, как работает калькулятор </a>
+<a href="https://youtu.be/RNkWCl4L6JQ"> Посмотреть на YouTube, как работает калькулятор </a>
 
 ***Технологии:***<br>
 Java <br>
