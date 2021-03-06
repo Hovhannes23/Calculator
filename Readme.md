@@ -10,7 +10,7 @@
 <a href="https://youtu.be/RNkWCl4L6JQ"> Посмотреть на YouTube, как работает калькулятор </a>
 
 ***Технологии:***<br>
-Java <br>
+Java  <br>
 Spring (Boot, Security) <br>
 Hibernate <br>
 MySQL <br>
